@@ -66,12 +66,8 @@ cmaps = [('Perceptually Uniform Sequential', [
 
 
 nrows = max(len(cmap_list) for cmap_category, cmap_list in cmaps)
-print("nrows")
-print(nrows)
 gradient = np.linspace(0, 1, 256)
 gradient = np.vstack((gradient, gradient))
-print("gradient")
-print(gradient)
 
 
 def plot_color_gradients():
@@ -81,10 +77,12 @@ def plot_color_gradients():
     # axes[0].set_title(cmap_category + ' colormaps', fontsize=14)
     axes = fig.add_subplot(111)
     axes.imshow(gradient, aspect='auto', cmap=plt.get_cmap("hot"))
-    pos = list(axes.get_position().bounds)
-    x_text = pos[0] - 0.01
-    y_text = pos[1] + pos[3] / 2.
-    fig.text(x_text, y_text, "hot", va='center', ha='right', fontsize=10)
+    # pos = list(axes.get_position().bounds)
+    # x_text = pos[0] - 0.01
+    # y_text = pos[1] + pos[3] / 2.
+    # print(x_text)
+    # print(y_text)
+    # fig.text(0, 0, "hot", va='center', ha='right', fontsize=10)
     axes.set_axis_off()
 
 plot_color_gradients()
