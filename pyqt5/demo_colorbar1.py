@@ -17,4 +17,5 @@ if __name__ == '__main__':
                                     ticks=bounds,  # optional
                                     spacing='proportional',
                                     orientation='vertical')
+    # orientation='horizontal'
     plt.show()
