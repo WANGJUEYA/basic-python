@@ -1,5 +1,3 @@
-import json
-
 import tornado.ioloop
 import tornado.web
 
@@ -19,9 +17,9 @@ class MainHandler(tornado.web.RequestHandler):
 
     def post(self):
         '''post接口， 获取参数'''
-        body = self.request.body
-        json_obj = json.loads(body)
-        result = dash(json_obj['template'], json_obj['image'])
+        template = self.get_argument('template', '')
+        image = self.get_argument('image', '')
+        result = dash(template, image)
         self.write(result)
 
 
